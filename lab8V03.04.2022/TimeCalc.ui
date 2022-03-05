@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.2">
+  <object class="ttk.Frame" id="top_level">
+    <property name="height">200</property>
+    <property name="padding">10</property>
+    <property name="width">200</property>
+    <layout manager="pack">
+      <property name="side">top</property>
+    </layout>
+    <child>
+      <object class="ttk.Label" id="header_label">
+        <property name="font">{Arial} 16 {bold}</property>
+        <property name="justify">center</property>
+        <property name="text" translatable="yes">Time Calculator</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="input_frame">
+        <property name="height">200</property>
+        <property name="padding">10</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="row">1</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="days_label">
+            <property name="anchor">n</property>
+            <property name="cursor">boat</property>
+            <property name="justify">center</property>
+            <property name="text" translatable="yes">Days</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">0</property>
+              <property name="sticky">e</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="hours_label">
+            <property name="text" translatable="yes">Hours</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">1</property>
+              <property name="sticky">e</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="minutes_label">
+            <property name="text" translatable="yes">Minutes</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">2</property>
+              <property name="sticky">e</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="seconds_label">
+            <property name="text" translatable="yes">Seconds</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">3</property>
+              <property name="sticky">e</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="days_entry">
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="pady">3</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="hours_entry">
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="pady">3</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="minutes_entry">
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="pady">3</property>
+              <property name="row">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="seconds_entry">
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="pady">3</property>
+              <property name="row">3</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="button_frame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="row">2</property>
+          <property name="sticky">e</property>
+        </layout>
+        <child>
+          <object class="ttk.Button" id="button1">
+            <property name="command" type="command" cbtype="simple">clear</property>
+            <property name="cursor">based_arrow_up</property>
+            <property name="state">normal</property>
+            <property name="takefocus">false</property>
+            <property name="text" translatable="yes">Clear</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="padx">3</property>
+              <property name="row">0</property>
+              <property name="sticky">e</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="button2">
+            <property name="command" type="command" cbtype="simple">calculate</property>
+            <property name="text" translatable="yes">OK</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="row">0</property>
+              <property name="sticky">e</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="answer_frame">
+        <property name="height">200</property>
+        <property name="padding">10</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="padx">10</property>
+          <property name="row">3</property>
+        </layout>
+        <containerlayout manager="grid">
+          <property name="anchor">ne</property>
+        </containerlayout>
+        <child>
+          <object class="ttk.Entry" id="result_entry">
+            <property name="textvariable">string:result_entry_variable</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="pady">10</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="seconds_answer">
+            <property name="text" translatable="yes">Seconds</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="result_label">
+            <property name="font">{Arial} 14 {bold}</property>
+            <property name="justify">center</property>
+            <property name="text" translatable="yes">Result</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

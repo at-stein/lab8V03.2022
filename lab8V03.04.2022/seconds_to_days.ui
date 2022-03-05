@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.2">
+  <object class="ttk.Frame" id="base_frame">
+    <property name="class_">header</property>
+    <property name="height">200</property>
+    <property name="padding">15</property>
+    <property name="width">300</property>
+    <layout manager="grid">
+      <property name="column">0</property>
+      <property name="row">0</property>
+    </layout>
+    <child>
+      <object class="ttk.Label" id="title">
+        <property name="cursor">arrow</property>
+        <property name="font">{Calibri} 12 {bold}</property>
+        <property name="justify">center</property>
+        <property name="takefocus">true</property>
+        <property name="text" translatable="yes">Seconds to Days Calculator</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="row">0</property>
+          <property name="sticky">n</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="entry_frame">
+        <property name="height">50</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="row">1</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="entry_lable">
+            <property name="font">{Calibri Light} 11 {}</property>
+            <property name="padding">3</property>
+            <property name="text" translatable="yes">Enter your seconds</property>
+            <layout manager="grid">
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="entry_user">
+            <property name="justify">center</property>
+            <property name="width">50</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="entry_buttun">
+            <property name="command" type="command" cbtype="simple">calculate</property>
+            <property name="text" translatable="yes">Calculate</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="padx">5</property>
+              <property name="row">1</property>
+              <property name="sticky">sw</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="results_frame">
+            <property name="height">50</property>
+            <property name="width">150</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">2</property>
+              <property name="sticky">s</property>
+            </layout>
+            <child>
+              <object class="ttk.Label" id="results_lable">
+                <property name="text" translatable="yes">Days: Hours: Minutes: Seconds:</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="results_entry">
+        <property name="class_">answer</property>
+        <property name="textvariable">string:result_entry_variable</property>
+        <property name="width">50</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="row">2</property>
+          <property name="sticky">se</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+</interface>
